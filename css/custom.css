@@ -1,0 +1,138 @@
+/* possible colors https://coolors.co/1b3d6b-164684-1253a8-3d7ed3-e8ecf2 */
+body {
+	background: #7C9EB2;
+	color: #252627;
+	font-family: 'Montserrat', sans-serif;
+}
+h1,
+h2 {
+	font-weight: bold;
+}
+h3{
+	font-size: 22px;
+	margin: 20px;
+	font-weight: bold;
+	color: white;
+}
+p {
+	font-size: 16px;
+	color: #252627;
+}
+a a:focus, a:hover, a:visited {
+	text-decoration: none;
+}
+.jumbotron {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: white;
+	background: #164684;
+	text-align: center;
+}
+.jumbotron p {
+	color: white;
+	font-size: 26px;
+}
+.navbar {
+	margin-bottom: 0;
+}
+.navbar-inverse {
+	background: #0C2C5D;
+	border: 0;
+}
+.dropdown-menu {
+	background: #0C2C5D;
+	border-radius: 0;
+	border: 0;
+}
+.navbar-brand{
+	padding-left: 40px;
+	color: white;
+}
+.navbar-inverse .navbar-nav li a {
+	color: #f7f7f7;
+	font-size: 16px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+	background: #4E5E99;
+	color: #9d9d9d;
+}
+.navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+	background: #4E5E99;
+}
+.dropdown-menu li a {
+	padding: 10px;
+}
+.btn-primary {
+	color: #7C9EB2;
+	background-color: transparent;
+	border-color: #7C9EB2;
+	margin-bottom: 5px;
+}
+.btn-primary:hover {
+	color: white;
+	background-color: #7C9EB2;
+	border-color: white;
+}
+.glyphicon-large {
+	font-size: 100px;
+}
+.call-to-action {
+	text-align: center;
+}
+.call-to-action p {
+	margin-bottom: 30px;
+	font-family: sans-serif;
+}
+.panel-example{
+	margin: 20px;
+	background: transparent;
+}
+.panel p{
+	color: #252627;
+}
+.panel-heading {
+	background: #e8e8e8;
+}
+.alert{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+#status {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	margin-bottom: 20px;
+	height:100%
+}
+div[id*='maintHead'] {
+	font-weight: bold;
+}
+div[id*='maintMess'] {
+		
+	}
+#maint{
+	background: white;
+	border-color: #ddd;
+	color: #252627;
+	height: 100%;
+	margin-top: -21px;
+}
+#announce{
+	font-weight: normal;
+	font-size: 16px;
+	padding-left: 20px;
+	color: #252627;
+	border: 1;
+	border-color: #ddd;
+	background: #F6EFA6;
+    border-radius: 4px;
+	margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+#copyright{
+	text-align: center;
+	color: #164684;
+}
