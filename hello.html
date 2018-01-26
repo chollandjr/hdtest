@@ -57,7 +57,7 @@
 	</div>
 </div>
 <div class="alerts">		
-	<a href="http://status.npsct.org" target="_blank"> <div id="status" class="alert" >	</div> </a>
+	<a href="https://status.npsct.org" target="_blank"> <div id="status" class="alert" >	</div> </a>
 	<div id=announce class="alert" style="display: none">
 			Upcoming Maintenance:
 		</div>
@@ -133,7 +133,7 @@
 <script>
 
 	$.ajax({
-		url: 'http://status.npsct.org/api/v1/status',
+		url: 'https://status.npsct.org/api/v1/status',
 		dataType: 'json',
 		method: 'get',
 		cache: false,
@@ -168,7 +168,7 @@
 <script type="text/javascript">
 	var today = new Date();
 	$.ajax({
-		url: 'http://status.npsct.org/api/v1/schedules',
+		url: 'https://status.npsct.org/api/v1/schedules',
 		dataType: 'json',
 		method: 'get',
 		cache: false,
