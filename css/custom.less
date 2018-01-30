@@ -3,14 +3,15 @@
 // Variables
 //@link-color:        #428bca; // sea blue
 //@link-color-hover:  darken(@link-color, 10%);
-@link-color:        #4cf23a;
-@link-color-hover:  darken(@link-color, 30%);
-@container-color:   #7d3af2;
-@container-border-color:  darken(@container-color, 30%);
+@link-color: #4cf23a;
+@link-color-hover: darken(@link-color, 30%);
+@container-color: #7d3af2;
+@container-border-color: darken(@container-color, 30%);
 @jumbocolor: #1b3d6b;
 @buttoncolor: @jumbocolor;
 @buttontext: @buttoncolor;
 @buttonborder: @buttoncolor;
+@blue: #1b3d6b;
 @green: #31A54E;
 @orange: #FF8800;
 @red: #FF6F6F;
@@ -20,134 +21,181 @@
 @panelback: white;
 @bodytext: #333;
 @bodyback: lighten(@jumbocolor, 45%);
-
+@infoblue: lighten(@blue,30%);
+@paper: #fffffa;
+@black: #343a40;
+@text: lighten(@black,25%);
 // Usage
 body {
 	background: @bodyback;
 	color: @bodytext;
 	font-family: 'Montserrat', sans-serif;
 }
+
 h1,
 h2 {
 	font-weight: bold;
 }
-h3{
+
+h3 {
 	font-size: 22px;
 	margin: 20px;
 	font-weight: bold;
 	color: white;
 }
+
 p {
 	font-size: 16px;
 	color: @bodytext;
 }
-a a:focus, a:hover, a:visited {
+
+a a:focus,
+a:hover,
+a:visited {
 	text-decoration: none;
 }
+
 .jumbotron {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	color: white;
 	background: @jumbocolor;
 	text-align: center;
 }
+
 .jumbotron p {
 	color: white;
 	font-size: 26px;
 }
+
 .navbar {
 	margin-bottom: 0;
 }
+
 .navbar-inverse {
 	background: #0C2C5D;
 	border: 0;
 }
+
 .dropdown-menu {
 	background: #0C2C5D;
 	border-radius: 0;
 	border: 0;
 }
-.navbar-brand{
+
+.navbar-brand {
 	padding-left: 40px;
 	color: white;
 }
+
 .navbar-inverse .navbar-nav li a {
 	color: #f7f7f7;
 	font-size: 16px;
 }
+
 .navbar-inverse .navbar-nav li a:hover {
 	background: #4E5E99;
 	color: #9d9d9d;
 }
+
 .navbar-inverse .navbar-nav .dropdown-menu li a:hover {
 	background: #4E5E99;
 }
+
 .dropdown-menu li a {
 	padding: 10px;
 }
+
 .btn-primary {
 	color: @buttontext;
 	background-color: transparent;
 	border-color: @buttonborder;
 	margin-bottom: 5px;
 }
+
 .btn-primary:hover {
 	color: white;
 	background-color: @buttoncolor;
 	border-color: white;
 }
-.panel-example{
+
+.panel-example {
 	margin: 20px;
 	background: transparent;
 }
-.panel p{
+
+.panel p {
 	color: #252627;
 }
+
 .panel-default {
 	background: @panelback;
 }
-.panel-default>.panel-heading {
+
+.panel-default > .panel-heading {
 	background: @panelhead;
 	border-color: @panelhead;
 }
-.alert{
+
+.alert {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+
+#announce {
+	margin: 20px 20px;
+}
+
+#announce > .card-header {
+	background-color: @infoblue;
+	border-color: darken(@infoblue,30%);
+	color: @paper;
+}
+
+#announce > .card-body {
+	border-color: darken(@infoblue,30%);
+}
+
 #status {
 	color: white;
 	font-weight: bold;
+	font-size: 16px;
 	text-decoration: none;
 	margin-bottom: 20px;
-	height:100%
+	height: 100%;
 }
+
 #good {
 	background-color: @green;
 	border: @green;
 }
+
 #info {
 	background-color: @orange;
 	border: @orange;
 }
+
 #bad {
 	background-color: @red;
 	border: @red;
 }
+
 div[id*='maintHead'] {
 	font-weight: bold;
 }
-div[id*='maintMess'] {
-		
-	}
-#maint{
+
+div[id*='maintMess'] {}
+
+#maint {
 	background: white;
 	border-color: #ddd;
 	color: @announcetext;
 	height: 100%;
 	margin-top: -21px;
 }
-#announce{
+
+#announce {
 	font-weight: normal;
 	font-size: 16px;
 	padding-left: 20px;
@@ -155,13 +203,29 @@ div[id*='maintMess'] {
 	border: 1;
 	border-color: @panelhead;
 	background: #F6EFA6;
-    border-radius: 4px;
-	margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 10px;
+	border-radius: 4px;
+	margin: 20px 20px 10px;
 }
-#copyright{
+
+#copyright {
 	text-align: center;
 	color: @jumbocolor;
+}
+
+#maintenance [class*="card-body"] {
+	line-height: normal;
+	background-color: @paper;
+	margin: -10px 20px 0px 20px;
+}
+div[class^="card-body"] .card-title {
+	line-height: normal;
+	font-weight: bold;
+	padding: 10px 0 0 0;
+
+}
+div[class^="card-body"] .card-text {
+	line-height: normal;
+	font-weight: normal;
+	margin: 0 0 0 10px;
+	padding: 0 0 20px 0;
 }
