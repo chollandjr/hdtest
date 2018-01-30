@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NPS Helpdesk Landing Page</title>
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<!--<link href="css/custom.css" rel="stylesheet"> -->
-	<!-- less elements -->
-	<link rel="stylesheet/less" type="text/css" href="css/custom.less" />
 
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <!--[if lt IE 9]>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NPS Helpdesk Landing Page</title>
+  <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!--<link href="css/custom.css" rel="stylesheet"> -->
+  <!-- less elements -->
+  <link rel="stylesheet/less" type="text/css" href="css/custom.less" />
+
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-<!-- <nav class="navbar navbar-inverse navbar-static-top">
+</head>
+
+<body>
+  <!-- <nav class="navbar navbar-inverse navbar-static-top">
 	<a class="navbar-brand" href="http://www.npsct.org">Newington Public Schools</a>
 	<div class="container">
 	<div class="navbar-header">
@@ -41,185 +43,227 @@
 				</li>
 				<li><a href="#">Contact</a></li>
 			</ul>
-		</div> 
-	</div> 
-</nav> -->
-<div class="jumbotron">
-	<div class="container">
-		<h1>NPS Helpdesk</h1>
-		<p>Welcome. We are happy to help. </p>
-	</div>
-</div>
-<div class="alerts">		
-	<a href="https://status.npsct.org" target="_blank"> <div id="status" class="alert" >	</div> </a>
-	<div id=announce class="alert" style="display: none">
-			Upcoming Maintenance:
 		</div>
-	<div id="maint" class="alert" style="display: none">
-	</div> 
-	<!--The message above will indicate if the IT Department is aware of a outage for most common services. -->
-</div>
+	</div>
+</nav> -->
+  <div id=jumbo1 class="jumbotron">
+    <div class="container">
+      <h1>NPS Helpdesk</h1>
+      <p>Welcome. We are happy to help. </p>
+    </div>
+  </div>
 
-<h3>Please choose from one of the categories below to submit a new request:</h3>
-<div class="panel-example">
-    <div class="panel-group" id="accordion">
+  <a href="https://status.npsct.org" target="_blank">
+    <div id=status class="alert" role="alert">
+      This is a success alert—check it out!
+    </div>
+  </a>
+
+  <div id="announce" class="card" hidden>
+    <!-- add/remove hidden tag hide/display this element -->
+    <h5 class="card-header">Announcements:</h5>
+    <div class="card-body">
+      <h6 class="card-title">Special IT Announcement</h6>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    </div>
+  </div>
+
+  <div id=maintenance>
+    <div id=announce class="alert">
+      Upcoming Maintenance:
+    </div>
+    <div id="maintbody" class="card-body" class="alert">
+    </div>
+    <!--The message above will indicate if the IT Department is aware of a outage for most common services. -->
+  </div>
+
+  <div id=accordion1>
+    <h3>Please choose from one of the categories below to submit a new request:</h3>
+    <div class="panel-example">
+      <div class="panel-group" id="accordion">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
+          <div class="panel-heading">
+            <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">A device or software is not working as it should. (IT Request)</a>
                 </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Click the button to request a repair for device or software.
+                <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3104" role="button">Repair »</a></p>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Click the button to request a repair for device or software.
-					<a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3104" role="button">Repair »</a></p>
-                </div>
-            </div>
+          </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
+          <div class="panel-heading">
+            <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Help using classroom technology. (Ed Tech Request)</a>
                 </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Click the button to request help with using a device or software.
+                <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3103" role="button">How To »</a></p>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Click the button to request help with using a device or software.
-					<a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3103" role="button">How To »</a></p>
-                </div>
-            </div>
+          </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
+          <div class="panel-heading">
+            <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Powerschool & Gradebook (Student Data Systems)</a>
                 </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Click button to request help with Powerschool, Gradebook, or other student data system.
+                <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3402" role="button">Powerschool »</a></p>
             </div>
-            <div id="collapseFour" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Click button to request help with Powerschool, Gradebook, or other student data system.
-					<a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3402" role="button">Powerschool »</a></p>
-                </div>
-            </div>
+          </div>
         </div>
         <div class="panel panel-default" style="display:none">
-            <div class="panel-heading" >
-                <h4 class="panel-title">
+          <div class="panel-heading">
+            <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Chromebook Request</a>
                 </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Click a button to request Chromebook assistance.
+                <a class="btn btn-primary btn-lg" href="#" role="button">Student Chromebook Repair </a>
+                <a class="btn btn-primary btn-lg" href="#" role="button">New Device Request </a>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Cart-based Chromebook Repair </a></p>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Click a button to request Chromebook assistance. 
-					<a class="btn btn-primary btn-lg" href="#" role="button">Student Chromebook Repair </a>
-					<a class="btn btn-primary btn-lg" href="#" role="button">New Device Request </a>
-					<a class="btn btn-primary btn-lg" href="#" role="button">Cart-based Chromebook Repair </a></p>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<script>less = {env: "development",};</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      less = {
+        env: "development",
+      };
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!--<script src="js/bootstrap.min.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/moment.min.js"> //source and docs @ https://momentjs.com/</script>
-	
-<script>
+    <script src="js/moment.min.js">
+      //source and docs @ https://momentjs.com/
+    </script>
 
-	$.ajax({
-		url: 'https://status.npsct.org/api/v1/status',
-		dataType: 'json',
-		method: 'get',
-		cache: false,
-		success: function(data) {
-			//console.log(data);
-			$(data).each(function (index,item) {
-				//console.log();
-				
-				if (item.data.status == "success") { 
-					color = "#31A54E"
-					document.getElementById("status").style.background = (color);
-					document.getElementById("status").style.border = (color);
-					}
-				if (item.data.status == "info") { 
-					color = "#FF8800"
-					document.getElementById("status").style.background = (color);
-					document.getElementById("status").style.border = (color);
-					}
-				if (item.data.status == "danger") { 
-					color = "#FF6F6F"
-					document.getElementById("status").style.background = (color);
-					document.getElementById("status").style.border = (color);
-					}
-			
-				{document.getElementById("status").innerHTML =(item.data.message) + " : Click for more details."};
-			})
-				}
-	});
+    <script>
+      $.ajax({
+        url: './status.json',
+        dataType: 'json',
+        method: 'get',
+        cache: false,
+        success: function(data) {
+          //console.log(data);
+          $(data).each(function(index, item) {
+            //console.log();
 
-</script>
+            if (item.data.status == "success") {
+              color = "#31A54E"
+              document.getElementById("status").style.background = (color);
+              document.getElementById("status").style.border = (color);
+            }
+            if (item.data.status == "info") {
+              color = "#FF8800"
+              document.getElementById("status").style.background = (color);
+              document.getElementById("status").style.border = (color);
+            }
+            if (item.data.status == "danger") {
+              color = "#FF6F6F"
+              document.getElementById("status").style.background = (color);
+              document.getElementById("status").style.border = (color);
+            }
 
-<script type="text/javascript">
-	var today = new Date();
-	$.ajax({
-		url: 'https://status.npsct.org/api/v1/schedules',
-		dataType: 'json',
-		method: 'get',
-		cache: false,
-		success: function(data) {
-			//console.log(data);
-			$.each(data, function(index,item) {
-				$.each(item, function(key,value) {
-					//console.log(item[key].scheduled_at);
-					//console.log(item[key].name);
-					//console.log(item[key].message);
-
-					if ((Date.parse(item[key].scheduled_at)) >= (Date.parse(today))) { 
-						document.getElementById("maint").style.display = "";
-						document.getElementById("announce").style.display = "";
-						document.getElementById("maint").style.height = "100%";
-						document.getElementById("announce").style.height = "100%";
-						
-						maintdate = moment(item[key].scheduled_at).format('LLL');
-						mainttime = moment(item[key].scheduled_at).format('MM/DD/YYYY');
-						maintfromnow = moment(item[key].scheduled_at).fromNow();
-						maintcal = moment(item[key].scheduled_at).calendar();
-						mainthead = (item[key].name)+" - "+maintfromnow+": ("+maintcal+")";
-						maintmessage = (item[key].message);
-						//console.log(mainthead);console.log(maintmessage);console.log(maintdate);console.log(maintfromnow);console.log(maintcal);
-
-							//add div for first maint, populate, format
-							var iDiv = document.getElementById("maint");
-							//iDiv.id = 'maint';
-							
-							// Create the inner div before appending to the body
-							var innerHead = document.createElement('div');
-							innerHead.id = 'maintHead'+[key];
-							var innerMess = document.createElement('div');
-							innerMess.id = 'maintMess'+[key];
+            {
+              document.getElementById("status").innerHTML = (item.data.message) + " : Click for more details."
+            };
+          })
+        }
+      });
+    </script>
 
 
-							iDiv.appendChild(innerHead);
-							iDiv.appendChild(innerMess);
-							//console.log(iDiv);console.log(innerHead);console.log(innerMess);
-							
-							//pupulate the divs
-							document.getElementById("maintHead"+[key]).appendChild(document.createTextNode(mainthead));
-							document.getElementById("maintMess"+[key]).appendChild(document.createTextNode(maintmessage));
+    <script type="text/javascript">
+      var today = new Date();
+      $.ajax({
+        url: './schedules.json',
+        dataType: 'json',
+        method: 'get',
+        cache: false,
+        success: function(data) {
+          //console.log(data);
+          $.each(data, function(index, item) {
+            $.each(item, function(key, value) {
+              //console.log(item[key].scheduled_at);
+              //console.log(item[key].name);
+              //console.log(item[key].message);
+              if ((item[key].scheduled_at) != undefined) {
+                now = (moment(today).format('LLLL'));
+                scheduled = (moment(item[key].scheduled_at).format('LLLL'));
+                //console.log(scheduled);
+                //console.log(item[key].name);
+                //console.log(item[key].message);
+                //console.log(Date.parse(scheduled));
+                //console.log(Date.parse(now));
 
-					}
-					else {
-						document.getElementById("maint").style.display = "none";
-					}
+                if ((Date.parse(scheduled)) >= (Date.parse(now))) {
 
-				})
-			})
-		}
-	});
-</script>
-<div id="copyright">&copy; Newington Public Schools</div>
-  </body>
+                  document.getElementById("maintenance");
+
+                  maintfromnow = moment(item[key].scheduled_at).fromNow();
+                  maintcal = moment(item[key].scheduled_at).calendar();
+                  mainttitle = (item[key].name) + " - " + maintfromnow + ": (" + maintcal + ")";
+                  mainttext = (item[key].message);
+                  //console.log(mainthead);console.log(maintmessage);console.log(maintdate);console.log(maintfromnow);console.log(maintcal);
+
+                  //add div for first maint, populate, format
+                  var oDiv = document.getElementById("maintbody");
+                  //oDiv.id = 'maintenance';
+
+                  // Create the inner div before appending to the body
+                  var iDiv = document.createElement('div');
+                  iDiv.className = 'card-body' + [key];
+                  oDiv.appendChild(iDiv);
+                  //console.log(iDiv);
+
+                  //populate the divs
+                  var appendText1 = '<p class="card-title">' + (mainttitle) + '</p>';
+                  var appendText2 = '<p class="card-text">' + (mainttext) + '</p>';
+                  var fullAppend = (appendText1) + (appendText2);
+                  //console.log(fullAppend);
+                  var currentCard = '.card-body' + [key];
+                  $(currentCard).append(fullAppend);
+                  //              document.getElementById("card-body" + [key]).appendChild(document.createTextNode(fullAppend));
+
+                  //have to create the following if > 1 entry in maintenance schedule
+                  //create <div class="card-body">
+                  //  <h6 class="card-title">Maintenance One:</h6>
+                  //  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  //</div>
+                  //<div class="cardrule">
+                  //  <hr>
+                  $('#maintenance').show();
+                } else {
+                  $('#maintenance').hide();
+                }
+
+              }
+
+            })
+          })
+        }
+      });
+    </script>
+
+
+
+
+    <div id="copyright">&copy; Newington Public Schools</div>
+</body>
+
 </html>
