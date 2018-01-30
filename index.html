@@ -59,20 +59,21 @@
     </div>
   </a>
 
-  <div id="announce" class="card" hidden>
-    <!-- add/remove hidden tag hide/display this element -->
-    <h5 class="card-header">Announcements:</h5>
-    <div class="card-body">
-      <h6 class="card-title">Special IT Announcement</h6>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  <div id=announcements class="panel panel-info" > <!--Anouncements -->
+    <div class="panel-heading">
+      <h3 class="panel-title">Announcements:</h3>
+    </div>
+    <div class="panel-body">
+      <h4>Special IT Announcement</h4>
+      <p>With supporting text below as a natural lead-in to additional content.</p>
     </div>
   </div>
 
-  <div id=maintenance>
-    <div id=announce class="alert">
-      Upcoming Maintenance:
+  <div id=maintenance class="panel panel-warning">
+    <div class="panel-heading">
+      <h3 class="panel-title">Upcoming Maintenance:</h3>
     </div>
-    <div id="maintbody" class="card-body" class="alert">
+    <div id="maintbody" class="panel-body">
     </div>
     <!--The message above will indicate if the IT Department is aware of a outage for most common services. -->
   </div>
@@ -154,7 +155,7 @@
 
     <script>
       $.ajax({
-        url: './status.json',
+        url: 'https://status.npsct.org/api/v1/status',
         dataType: 'json',
         method: 'get',
         cache: false,
@@ -191,7 +192,7 @@
     <script type="text/javascript">
       var today = new Date();
       $.ajax({
-        url: './schedules.json',
+        url: 'https://status.npsct.org/api/v1/schedules',
         dataType: 'json',
         method: 'get',
         cache: false,
@@ -227,16 +228,16 @@
 
                   // Create the inner div before appending to the body
                   var iDiv = document.createElement('div');
-                  iDiv.className = 'card-body' + [key];
+                  iDiv.className = 'panel-body' + [key];
                   oDiv.appendChild(iDiv);
                   //console.log(iDiv);
 
                   //populate the divs
-                  var appendText1 = '<p class="card-title">' + (mainttitle) + '</p>';
-                  var appendText2 = '<p class="card-text">' + (mainttext) + '</p>';
+                  var appendText1 = '<h4 class="panel-body">' + (mainttitle) + '</h4>';
+                  var appendText2 = '<p class="panel-body">' + (mainttext) + '</p>';
                   var fullAppend = (appendText1) + (appendText2);
                   //console.log(fullAppend);
-                  var currentCard = '.card-body' + [key];
+                  var currentCard = '.panel-body' + [key];
                   $(currentCard).append(fullAppend);
                   //              document.getElementById("card-body" + [key]).appendChild(document.createTextNode(fullAppend));
 
@@ -259,7 +260,6 @@
         }
       });
     </script>
-
 
 
 
