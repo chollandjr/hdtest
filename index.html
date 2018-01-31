@@ -33,7 +33,7 @@
     </div>
   </a>
 
-  <div id=announcements class="panel panel-info">
+  <div id=announcements class="panel panel-info" hidden>
     <!--Anouncements -->
     <div class="panel-heading">
       <h3 class="panel-title">Announcements:</h3>
@@ -58,60 +58,65 @@
   </div>
   <div class="accordion-panels">
     <div class="panel-group" id="accordion">
+
       <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">A device or software is not working as it should. (IT Request)</a>
-                </h4>
-        </div>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <div class="panel-heading">
+            <h4 class="panel-title"> A device or software is not working as it should. (IT Request) </h4>
+          </div>
+        </a>
         <div id="collapseOne" class="panel-collapse collapse">
           <div class="panel-body">
             <p>Click the button to request a repair for device or software.
-              <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3104" role="button">Repair »</a></p>
+              <a class="btn btn-primary " href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3104" role="button">Repair »</a></p>
           </div>
         </div>
       </div>
+
       <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Help using classroom technology. (Ed Tech Request)</a>
-                </h4>
-        </div>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <div class="panel-heading">
+            <h4 class="panel-title"> Help using classroom technology. (Ed Tech Request) </h4>
+          </div>
+        </a>
         <div id="collapseTwo" class="panel-collapse collapse">
           <div class="panel-body">
             <p>Click the button to request help with using a device or software.
-              <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3103" role="button">How To »</a></p>
+              <a class="btn btn-primary " href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3103" role="button">How To »</a></p>
           </div>
         </div>
       </div>
+
       <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Powerschool & Gradebook (Student Data Systems)</a>
-                </h4>
-        </div>
-        <div id="collapseFour" class="panel-collapse collapse">
-          <div class="panel-body">
-            <p>Click button to request help with Powerschool, Gradebook, or other student data system.
-              <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3402" role="button">Powerschool »</a></p>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          <div class="panel-heading">
+            <h4 class="panel-title"> Powerschool & Gradebook (Student Data Systems) </h4>
           </div>
-        </div>
-      </div>
-      <div class="panel panel-default" style="display:none">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Chromebook Request</a>
-                </h4>
-        </div>
+        </a>
         <div id="collapseThree" class="panel-collapse collapse">
           <div class="panel-body">
-            <p>Click a button to request Chromebook assistance.
-              <a class="btn btn-primary btn-lg" href="#" role="button">Student Chromebook Repair </a>
-              <a class="btn btn-primary btn-lg" href="#" role="button">New Device Request </a>
-              <a class="btn btn-primary btn-lg" href="#" role="button">Cart-based Chromebook Repair </a></p>
+            <p>Click button to request help with Powerschool, Gradebook, or other student data system.
+              <a class="btn btn-primary " href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3402" role="button">StudentData »</a></p>
           </div>
         </div>
       </div>
+
+      <div class="panel panel-primary" hidden>
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          <div class="panel-heading">
+            <h4 class="panel-title"> Chromebook Request </h4>
+          </div>
+        </a>
+        <div id="collapseFour" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>Click button to request Chromebook assistance.
+              <a class="btn btn-primary " href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3402" role="button">StudentChromebook »</a>
+              <a class="btn btn-primary " href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3402" role="button">CartChromebook »</a>
+              <a class="btn btn-primary " href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3402" role="button">NewStudent »</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
   </div>
@@ -131,8 +136,8 @@
 
   <script>
     $.ajax({
-      //url: 'https://status.npsct.org/api/v1/status',
-      url: 'status.json',
+      url: 'https://status.npsct.org/api/v1/status',
+      //url: 'status.json',
       dataType: 'json',
       method: 'get',
       cache: false,
@@ -165,8 +170,8 @@
   <script type="text/javascript">
     var today = new Date();
     $.ajax({
-      //url: 'https://status.npsct.org/api/v1/schedules',
-      url: 'schedules.json',
+      url: 'https://status.npsct.org/api/v1/schedules',
+      //url: 'schedules.json',
       dataType: 'json',
       method: 'get',
       cache: false,

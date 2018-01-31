@@ -8,13 +8,14 @@
 @buttontext: @buttoncolor;
 @buttonborder: @buttoncolor;
 @blue: #1b3d6b;
-@green: #31A54E;
+@green: #7ed321;
 @orange: #FF8800;
 @red: #FF6F6F;
 @announcehead: #F6EFA6;
 @announcetext: #333;
 @panelhead: #ddd;
 @panelback: @paper;
+@panelwarning: #fcf8e3;
 @bodytext: #333;
 @bodyback: lighten(@jumbocolor, 45%);
 @infoblue: lighten(@blue,30%);
@@ -23,7 +24,7 @@
 @text: lighten(@black,25%); // Usage
 
 body {
-	background: @bodyback;
+	background: lighten(@blue, 55%);
 	color: @bodytext;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -120,25 +121,24 @@ a:visited {
 	background: #4E5E99;
 }
 
-.panel-primary .panel-heading{
-	background-color: lighten(@blue,30%);
-}
-
 .status-success {
 	background: @green;
-	border: lighten(@green, 30%);
+	border: 2px solid;
+	border-color: darken(@green, 5%);
 	color: @paper;
 }
 
 .status-info {
 	background: @orange;
-	border: lighten(@orange, 30%);
+	border: 2px solid;
+	border-color: darken(@orange, 5%);
 	color: @paper;
 }
 
 .status-danger {
 	background: @red;
-	border: lighten(@red, 30%);
+	border: 2px solid;
+	border-color: darken(@red, 5%);
 	color: @paper;
 }
 
@@ -149,8 +149,24 @@ a:visited {
 	font-size: 18px;
 }
 
+#accordion .panel-heading {
+	background-color: lighten(@blue, 30%);
+}
+
+#accordion a {
+	color: @paper;
+}
+
+#accordion a.btn-primary {
+	color: @blue;
+}
+#accordion a.btn-primary:hover {
+	color: @paper;
+}
+
 #announcements {
 	margin: 20px;
+	border-color: lighten(@blue, 30%);
 }
 
 #announcements h4,
@@ -163,15 +179,25 @@ a:visited {
 	margin: 20px;
 }
 
+#announcements .panel-heading {
+	background-color: lighten(@blue, 60%);
+	border-color: lighten(@blue, 30%);
+}
+
 #copyright {
 	text-align: center;
 	color: @jumbocolor;
 }
 
 #maintenance {
+	border: 2px solid;
+	border-color: darken(@panelwarning, 25%);
 	margin: 20px;
 }
 
+#maintenance .panel-heading {
+	background-color: @panelwarning;
+}
 #maintenance [class^=panel-body] {
 	margin: 20px;
 }
