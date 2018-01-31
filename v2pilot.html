@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!--<link href="css/custom.css" rel="stylesheet"> -->
   <!-- less elements -->
-  <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+  <link rel="stylesheet/less" type="text/css" href="css/styles2.less" />
 
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]>
@@ -53,7 +53,7 @@
     <!--The message above will indicate if the IT Department is aware of a outage for most common services. -->
   </div>
 
-  <div id=accordion1>
+  <div id=accordionA>
     Please choose from one of the categories below to submit a new request:
   </div>
   <div class="accordion-panels">
@@ -220,10 +220,47 @@
   </script>
   <div id="copyright">&copy; Newington Public Schools</div>
 
-<div id=v2pilot w3-include-html="v2pilot.html">
+  <div id=v2pilot w3-include-html="v2pilot.html">
 
-</div>
+  </div>
 
+  <div id=accordionB>
+    Please choose from one of the categories below to submit a new request:
+
+
+    <div class="accordion-panels">
+      <div class="panel-group" id="accordion2">
+
+        <div class="panel panel-primary">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseA">
+            <div class="panel-heading">
+              <h4 class="panel-title"> A device or software is not working as it should. (IT Request) </h4>
+            </div>
+          </a>
+          <div id="collapseA" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Click the button to request a repair for device or software.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $.ajax({
+          url: 'https://status.npsct.org/api/v1/components',
+          dataType: 'json',
+          method: 'get',
+          cache: false,
+          success: function(data) {
+            console.log(data);
+            $(data).each(function(index, item) {
+                console.log(index);console.log(item);
+              })
+            }
+          });
+  </script>
 </body>
 
 

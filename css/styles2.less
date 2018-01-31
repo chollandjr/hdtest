@@ -1,0 +1,229 @@
+/* possible colors https://coolors.co/1b3d6b-164684-1253a8-3d7ed3-e8ecf2 */
+/* styles.less */
+// Variables
+//@link-color:        #428bca; // sea blue
+//@link-color-hover:  darken(@link-color, 10%);
+@jumbocolor: #1b3d6b;
+@buttoncolor: @jumbocolor;
+@buttontext: @buttoncolor;
+@buttonborder: @buttoncolor;
+@blue: #1b3d6b;
+@green: #7ed321;
+@orange: #FF8800;
+@red: #FF6F6F;
+@announcehead: #F6EFA6;
+@announcetext: #333;
+@panelhead: #ddd;
+@panelback: @paper;
+@panelwarning: #fcf8e3;
+@bodytext: #333;
+@bodyback: lighten(@jumbocolor, 45%);
+@infoblue: lighten(@blue,30%);
+@paper: #f0f0f0;
+@black: #343a40;
+@text: lighten(@black,25%); // Usage
+
+body {
+	background: lighten(@blue, 55%);
+	color: @bodytext;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+p {
+	font-size: 16px;
+	color: @bodytext;
+}
+
+a,
+a:focus,
+a:hover,
+a:visited {
+	text-decoration: none;
+}
+
+.accordion-panels {
+	margin: 20px;
+	background: transparent;
+}
+
+.btn-primary {
+	color: @buttontext;
+	background-color: transparent;
+	border-color: @buttonborder;
+	margin-bottom: 5px;
+}
+
+.btn-primary:hover {
+	color: @paper;
+	background-color: @buttoncolor;
+	border-color: @paper;
+}
+
+.dropdown-menu li a {
+	padding: 10px;
+}
+
+.dropdown-menu {
+	background: #0C2C5D;
+	border-radius: 0;
+	border: 0;
+}
+
+.jumbotron {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	color: @paper;
+	background: @jumbocolor;
+	text-align: center;
+}
+
+.jumbotron p {
+	color: @paper;
+	font-size: 26px;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.navbar-inverse {
+	background: #0C2C5D;
+	border: 0;
+}
+
+.navbar-brand {
+	padding-left: 40px;
+	color: @paper;
+}
+
+.navbar-inverse .navbar-nav li a {
+	color: #f7f7f7;
+	font-size: 16px;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+	background: #4E5E99;
+	color: #9d9d9d;
+}
+
+.navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+	background: #4E5E99;
+}
+
+.status-success {
+	background: @green;
+	border: 2px solid;
+	border-color: darken(@green, 5%);
+	color: @paper;
+}
+
+.status-info {
+	background: @orange;
+	border: 2px solid;
+	border-color: darken(@orange, 5%);
+	color: @paper;
+}
+
+.status-danger {
+	background: @red;
+	border: 2px solid;
+	border-color: darken(@red, 5%);
+	color: @paper;
+}
+
+#accordionA {
+	margin: 20px;
+	color: @blue;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#accordionB {
+	margin: 20px;
+	color: @green;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#accordion .panel-heading {
+	background-color: lighten(@blue, 30%);
+}
+
+#accordion a {
+	color: @paper;
+}
+
+#accordion a.btn-primary {
+	color: @blue;
+}
+#accordion a.btn-primary:hover {
+	color: @paper;
+}
+
+#accordion2 .panel {
+	border: 2px solid;
+	border-color: @green;
+}
+#accordion2 .panel-heading {
+	background-color: lighten(@green, 30%);
+	border-color: @green;
+	color: darken(@green, 10%);
+}
+
+#announcements {
+	margin: 20px;
+	border-color: lighten(@blue, 30%);
+}
+
+#announcements h4,
+#maintenance h4 {
+	text-decoration: underline;
+}
+
+#announcements .panel-body {
+	padding: 0;
+	margin: 20px;
+}
+
+#announcements .panel-heading {
+	background-color: lighten(@blue, 60%);
+	border-color: lighten(@blue, 30%);
+}
+
+#copyright {
+	text-align: center;
+	color: @jumbocolor;
+}
+
+#maintenance {
+	border: 2px solid;
+	border-color: darken(@panelwarning, 25%);
+	margin: 20px;
+}
+
+#maintenance .panel-heading {
+	background-color: @panelwarning;
+}
+#maintenance [class^=panel-body] {
+	margin: 20px;
+}
+
+#status {
+	font-weight: bold;
+	font-size: 16px;
+	text-decoration: none;
+	margin: 20PX;
+	padding: 10px;
+	border-radius: 4px;
+}
