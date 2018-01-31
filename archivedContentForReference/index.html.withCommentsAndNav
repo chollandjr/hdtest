@@ -20,6 +20,32 @@
 </head>
 
 <body>
+  <!-- <nav class="navbar navbar-inverse navbar-static-top">
+	<a class="navbar-brand" href="http://www.npsct.org">Newington Public Schools</a>
+	<div class="container">
+	<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="http://status.npsct.org">Status Website</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support Resources<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">IT Guides</a></li>
+						<li><a href="#">Other</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+</nav> -->
   <div id=jumbo1 class="jumbotron">
     <div class="container">
       <h1>NPS Helpdesk</h1>
@@ -56,64 +82,64 @@
   <div id=accordion1>
     Please choose from one of the categories below to submit a new request:
   </div>
-  <div class="accordion-panels">
-    <div class="panel-group" id="accordion">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h4 class="panel-title">
+    <div class="accordion-panels">
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">A device or software is not working as it should. (IT Request)</a>
                 </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse">
-          <div class="panel-body">
-            <p>Click the button to request a repair for device or software.
-              <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3104" role="button">Repair »</a></p>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Click the button to request a repair for device or software.
+                <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3104" role="button">Repair »</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h4 class="panel-title">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Help using classroom technology. (Ed Tech Request)</a>
                 </h4>
-        </div>
-        <div id="collapseTwo" class="panel-collapse collapse">
-          <div class="panel-body">
-            <p>Click the button to request help with using a device or software.
-              <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3103" role="button">How To »</a></p>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Click the button to request help with using a device or software.
+                <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3103" role="button">How To »</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h4 class="panel-title">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Powerschool & Gradebook (Student Data Systems)</a>
                 </h4>
-        </div>
-        <div id="collapseFour" class="panel-collapse collapse">
-          <div class="panel-body">
-            <p>Click button to request help with Powerschool, Gradebook, or other student data system.
-              <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3402" role="button">Powerschool »</a></p>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Click button to request help with Powerschool, Gradebook, or other student data system.
+                <a class="btn btn-primary btn-lg" href="https://nboe.npsct.org:8443/WorkOrder.do?reqTemplate=3402" role="button">Powerschool »</a></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="panel panel-default" style="display:none">
-        <div class="panel-heading">
-          <h4 class="panel-title">
+        <div class="panel panel-default" style="display:none">
+          <div class="panel-heading">
+            <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Chromebook Request</a>
                 </h4>
-        </div>
-        <div id="collapseThree" class="panel-collapse collapse">
-          <div class="panel-body">
-            <p>Click a button to request Chromebook assistance.
-              <a class="btn btn-primary btn-lg" href="#" role="button">Student Chromebook Repair </a>
-              <a class="btn btn-primary btn-lg" href="#" role="button">New Device Request </a>
-              <a class="btn btn-primary btn-lg" href="#" role="button">Cart-based Chromebook Repair </a></p>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Click a button to request Chromebook assistance.
+                <a class="btn btn-primary btn-lg" href="#" role="button">Student Chromebook Repair </a>
+                <a class="btn btn-primary btn-lg" href="#" role="button">New Device Request </a>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Cart-based Chromebook Repair </a></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <script>
@@ -149,7 +175,8 @@
           }
           if (item.data.status == "danger") {
             document.getElementById("status").className = 'status-danger';
-          } {
+          }
+          {
             if ((item.data.status) == "success") {
               document.getElementById("status").innerHTML = (item.data.message)
             } else {
@@ -171,11 +198,20 @@
       method: 'get',
       cache: false,
       success: function(data) {
+        //console.log(data);
         $.each(data, function(index, item) {
           $.each(item, function(key, value) {
+            //console.log(item[key].scheduled_at);
+            //console.log(item[key].name);
+            //console.log(item[key].message);
             if ((item[key].scheduled_at) != undefined) {
               now = (moment(today).format('LLLL'));
               scheduled = (moment(item[key].scheduled_at).format('LLLL'));
+              //console.log(scheduled);
+              //console.log(item[key].name);
+              //console.log(item[key].message);
+              //console.log(Date.parse(scheduled));
+              //console.log(Date.parse(now));
 
               if ((Date.parse(scheduled)) >= (Date.parse(now))) {
 
@@ -185,25 +221,29 @@
                 maintcal = moment(item[key].scheduled_at).calendar();
                 mainttitle = (item[key].name) + " - " + maintfromnow + ": (" + maintcal + ")";
                 mainttext = (item[key].message);
+                console.log(mainttitle);console.log(mainttext);
 
-                //select outer div for population
+                //add div for first maint, populate, format
                 var oDiv = document.getElementById("maintbody");
+                //oDiv.id = 'maintenance';
 
-                // Create the inner div
+                // Create the inner div before appending to the body
                 var iDiv = document.createElement('div');
                 iDiv.className = 'panel-body' + [key];
                 oDiv.appendChild(iDiv);
+                //console.log(iDiv);
 
-                //populate the inner div
+                //populate the divs
                 var appendText1 = '<h4>' + (mainttitle) + '</h4>';
                 var appendText2 = '<p>' + (mainttext) + '</p>';
                 var fullAppend = (appendText1) + (appendText2);
+                //console.log(fullAppend);
                 var currentCard = '.panel-body' + [key];
                 $(currentCard).append(fullAppend);
 
-                $('#maintenance').show(); //show div if there are upcoming events
+                $('#maintenance').show();
               } else {
-                $('#maintenance').hide(); //hide div if no upcoming events
+                $('#maintenance').hide();
               }
 
             }
@@ -213,6 +253,9 @@
       }
     });
   </script>
+
+
+
   <div id="copyright">&copy; Newington Public Schools</div>
 </body>
 

@@ -124,6 +124,24 @@ a:visited {
 	background-color: lighten(@blue,30%);
 }
 
+.status-success {
+	background: @green;
+	border: lighten(@green, 30%);
+	color: @paper;
+}
+
+.status-info {
+	background: @orange;
+	border: lighten(@orange, 30%);
+	color: @paper;
+}
+
+.status-danger {
+	background: @red;
+	border: lighten(@red, 30%);
+	color: @paper;
+}
+
 #accordion1 {
 	margin: 20px;
 	color: @blue;
@@ -159,10 +177,10 @@ a:visited {
 }
 
 #status {
-	color: @paper;
 	font-weight: bold;
 	font-size: 16px;
 	text-decoration: none;
 	margin: 20PX;
-	height: 100%;
+	padding: 10px;
+	border-radius: 4px;
 }

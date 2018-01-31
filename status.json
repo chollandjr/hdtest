@@ -1,1 +1,6 @@
-{"data":{"status":"success","message":" All systems are operational"}}
+{
+  "data": {
+    "status": "success",
+    "message": " All systems are operational"
+  }
+}
