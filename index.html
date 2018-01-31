@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!--<link href="css/custom.css" rel="stylesheet"> -->
   <!-- less elements -->
-  <link rel="stylesheet/less" type="text/css" href="css/custom.less" />
+  <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
 
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]>
@@ -59,7 +59,8 @@
     </div>
   </a>
 
-  <div id=announcements class="panel panel-info" > <!--Anouncements -->
+  <div id=announcements class="panel panel-info">
+    <!--Anouncements -->
     <div class="panel-heading">
       <h3 class="panel-title">Announcements:</h3>
     </div>
@@ -73,16 +74,17 @@
     <div class="panel-heading">
       <h3 class="panel-title">Upcoming Maintenance:</h3>
     </div>
-    <div id="maintbody" class="panel-body">
+    <div id="maintbody">
     </div>
     <!--The message above will indicate if the IT Department is aware of a outage for most common services. -->
   </div>
 
   <div id=accordion1>
-    <h3>Please choose from one of the categories below to submit a new request:</h3>
-    <div class="panel-example">
+    Please choose from one of the categories below to submit a new request:
+  </div>
+    <div class="accordion-panels">
       <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
           <div class="panel-heading">
             <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">A device or software is not working as it should. (IT Request)</a>
@@ -95,7 +97,7 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
           <div class="panel-heading">
             <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Help using classroom technology. (Ed Tech Request)</a>
@@ -108,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
           <div class="panel-heading">
             <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Powerschool & Gradebook (Student Data Systems)</a>
@@ -140,130 +142,128 @@
     </div>
   </div>
 
-    <script>
-      less = {
-        env: "development",
-      };
-    </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!--<script src="js/bootstrap.min.js"></script>-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/moment.min.js">
-      //source and docs @ https://momentjs.com/
-    </script>
+  <script>
+    less = {
+      env: "development",
+    };
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!--<script src="js/bootstrap.min.js"></script>-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/moment.min.js">
+    //source and docs @ https://momentjs.com/
+  </script>
 
-    <script>
-      $.ajax({
-        url: 'https://status.npsct.org/api/v1/status',
-        dataType: 'json',
-        method: 'get',
-        cache: false,
-        success: function(data) {
-          //console.log(data);
-          $(data).each(function(index, item) {
-            //console.log();
+  <script>
+    $.ajax({
+      //url: 'https://status.npsct.org/api/v1/status',
+      url: 'status.json',
+      dataType: 'json',
+      method: 'get',
+      cache: false,
+      success: function(data) {
+        //console.log(data);
+        $(data).each(function(index, item) {
+          //console.log();
 
-            if (item.data.status == "success") {
-              color = "#31A54E"
-              document.getElementById("status").style.background = (color);
-              document.getElementById("status").style.border = (color);
-            }
-            if (item.data.status == "info") {
-              color = "#FF8800"
-              document.getElementById("status").style.background = (color);
-              document.getElementById("status").style.border = (color);
-            }
-            if (item.data.status == "danger") {
-              color = "#FF6F6F"
-              document.getElementById("status").style.background = (color);
-              document.getElementById("status").style.border = (color);
-            }
+          if (item.data.status == "success") {
+            color = "#31A54E"
+            document.getElementById("status").style.background = (color);
+            document.getElementById("status").style.border = (color);
+          }
+          if (item.data.status == "info") {
+            color = "#FF8800"
+            document.getElementById("status").style.background = (color);
+            document.getElementById("status").style.border = (color);
+          }
+          if (item.data.status == "danger") {
+            color = "#FF6F6F"
+            document.getElementById("status").style.background = (color);
+            document.getElementById("status").style.border = (color);
+          }
 
-            {
+          {
+            if ((item.data.message) == " All systems are operational") {
+              document.getElementById("status").innerHTML = (item.data.message)
+            } else {
               document.getElementById("status").innerHTML = (item.data.message) + " : Click for more details."
-            };
-          })
-        }
-      });
-    </script>
+            }
+          };
+        })
+      }
+    });
+  </script>
 
 
-    <script type="text/javascript">
-      var today = new Date();
-      $.ajax({
-        url: 'https://status.npsct.org/api/v1/schedules',
-        dataType: 'json',
-        method: 'get',
-        cache: false,
-        success: function(data) {
-          //console.log(data);
-          $.each(data, function(index, item) {
-            $.each(item, function(key, value) {
-              //console.log(item[key].scheduled_at);
+  <script type="text/javascript">
+    var today = new Date();
+    $.ajax({
+      //url: 'https://status.npsct.org/api/v1/schedules',
+      url: 'schedules.json',
+      dataType: 'json',
+      method: 'get',
+      cache: false,
+      success: function(data) {
+        //console.log(data);
+        $.each(data, function(index, item) {
+          $.each(item, function(key, value) {
+            //console.log(item[key].scheduled_at);
+            //console.log(item[key].name);
+            //console.log(item[key].message);
+            if ((item[key].scheduled_at) != undefined) {
+              now = (moment(today).format('LLLL'));
+              scheduled = (moment(item[key].scheduled_at).format('LLLL'));
+              //console.log(scheduled);
               //console.log(item[key].name);
               //console.log(item[key].message);
-              if ((item[key].scheduled_at) != undefined) {
-                now = (moment(today).format('LLLL'));
-                scheduled = (moment(item[key].scheduled_at).format('LLLL'));
-                //console.log(scheduled);
-                //console.log(item[key].name);
-                //console.log(item[key].message);
-                //console.log(Date.parse(scheduled));
-                //console.log(Date.parse(now));
+              //console.log(Date.parse(scheduled));
+              //console.log(Date.parse(now));
 
-                if ((Date.parse(scheduled)) >= (Date.parse(now))) {
+              if ((Date.parse(scheduled)) >= (Date.parse(now))) {
 
-                  document.getElementById("maintenance");
+                document.getElementById("maintenance");
 
-                  maintfromnow = moment(item[key].scheduled_at).fromNow();
-                  maintcal = moment(item[key].scheduled_at).calendar();
-                  mainttitle = (item[key].name) + " - " + maintfromnow + ": (" + maintcal + ")";
-                  mainttext = (item[key].message);
-                  //console.log(mainthead);console.log(maintmessage);console.log(maintdate);console.log(maintfromnow);console.log(maintcal);
+                maintfromnow = moment(item[key].scheduled_at).fromNow();
+                maintcal = moment(item[key].scheduled_at).calendar();
+                mainttitle = (item[key].name) + " - " + maintfromnow + ": (" + maintcal + ")";
+                mainttext = (item[key].message);
+                console.log(mainttitle);console.log(mainttext);
 
-                  //add div for first maint, populate, format
-                  var oDiv = document.getElementById("maintbody");
-                  //oDiv.id = 'maintenance';
+                //add div for first maint, populate, format
+                var oDiv = document.getElementById("maintbody");
+                //oDiv.id = 'maintenance';
 
-                  // Create the inner div before appending to the body
-                  var iDiv = document.createElement('div');
-                  iDiv.className = 'panel-body' + [key];
-                  oDiv.appendChild(iDiv);
-                  //console.log(iDiv);
+                // Create the inner div before appending to the body
+                var iDiv = document.createElement('div');
+                iDiv.className = 'panel-body' + [key];
+                oDiv.appendChild(iDiv);
+                //console.log(iDiv);
 
-                  //populate the divs
-                  var appendText1 = '<h4 class="panel-body">' + (mainttitle) + '</h4>';
-                  var appendText2 = '<p class="panel-body">' + (mainttext) + '</p>';
-                  var fullAppend = (appendText1) + (appendText2);
-                  //console.log(fullAppend);
-                  var currentCard = '.panel-body' + [key];
-                  $(currentCard).append(fullAppend);
-                  //              document.getElementById("card-body" + [key]).appendChild(document.createTextNode(fullAppend));
+                //populate the divs
+                var appendText1 = '<h4>' + (mainttitle) + '</h4>';
+                var appendText2 = '<p>' + (mainttext) + '</p>';
+                var fullAppend = (appendText1) + (appendText2);
+                //console.log(fullAppend);
+                var currentCard = '.panel-body' + [key];
+                $(currentCard).append(fullAppend);
 
-                  //have to create the following if > 1 entry in maintenance schedule
-                  //create <div class="card-body">
-                  //  <h6 class="card-title">Maintenance One:</h6>
-                  //  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  //</div>
-                  //<div class="cardrule">
-                  //  <hr>
-                  $('#maintenance').show();
-                } else {
-                  $('#maintenance').hide();
-                }
-
+                $('#maintenance').show();
+              } else {
+                $('#maintenance').hide();
               }
 
-            })
+            }
+
           })
-        }
-      });
-    </script>
+        })
+      }
+    });
+  </script>
 
 
 
-    <div id="copyright">&copy; Newington Public Schools</div>
+  <div id="copyright">&copy; Newington Public Schools</div>
 </body>
 
 </html>
