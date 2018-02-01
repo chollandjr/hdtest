@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!--<link href="css/custom.css" rel="stylesheet"> -->
   <!-- less elements -->
-  <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+  <link rel="stylesheet/less" type="text/css" href="css/styles2.less" />
 
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <!--[if lt IE 9]>
@@ -27,9 +27,25 @@
     </div>
   </div>
 
+  <!-- Status Panel Display -->
   <a href="https://status.npsct.org" target="_blank">
-    <div id=status class="alert" role="alert">
-      This is a success alert—check it out!
+    <div id="statusPanel" class="panel panel-default">
+
+      <!-- make header clickable to URL rather than as a toggle to show the body panel
+   <a data-toggle="collapse" data-parent="#accordion" href="#statusPanelBody">
+        <div id="statusPanelHead" class="panel-heading">Replace me with current status!</div>
+      </a> -->
+      <div id="statusPanelHead" class="panel-heading">Replace me with current status!</div>
+
+  </a>
+  <div id="statusPanelBody" class="panel-collapse collapse">
+  </div>
+  </div>
+
+
+  <a href="https://status.npsct.org" target="_blank">
+    <div id=status class="alert" role="alert" hidden>
+      Replace me with current status!
     </div>
   </a>
 
@@ -53,7 +69,7 @@
     <!--The message above will indicate if the IT Department is aware of a outage for most common services. -->
   </div>
 
-  <div id=accordion1>
+  <div id=accordionA>
     Please choose from one of the categories below to submit a new request:
   </div>
   <div class="accordion-panels">
@@ -121,7 +137,18 @@
   </div>
   </div>
 
+
+  <div id="copyright">&copy; Newington Public Schools</div>
+
+  <div id=v2pilot w3-include-html="v2pilot.html">
+
+  </div>
+
+
+
+  <!-- Page Scripts Below -->
   <script>
+    //populate linked scripts
     less = {
       env: "development",
     };
@@ -135,6 +162,7 @@
   </script>
 
   <script>
+    //basic status bar
     $.ajax({
       url: 'https://status.npsct.org/api/v1/status',
       //url: 'status.json',
@@ -144,23 +172,31 @@
       success: function(data) {
         //console.log(data);
         $(data).each(function(index, item) {
-          //console.log();
-
+          console.log();
+          //set ribbon for current status
           if (item.data.status == "success") {
             document.getElementById("status").className = 'status-success';
+            document.getElementById("statusPanel").className = 'status-success';
+            document.getElementById("statusPanelBody").className = 'statuspanelBody';
           }
           if (item.data.status == "info") {
             document.getElementById("status").className = 'status-info';
+            document.getElementById("statusPanel").className = 'status-info';
+            document.getElementById("statusPanelBody").className = 'statuspanelBodyOpen';
           }
           if (item.data.status == "danger") {
             document.getElementById("status").className = 'status-danger';
-          } {
-            if ((item.data.status) == "success") {
-              document.getElementById("status").innerHTML = (item.data.message)
-            } else {
-              document.getElementById("status").innerHTML = (item.data.message) + " : Click for more details."
-            }
-          };
+            document.getElementById("statusPanel").className = 'status-danger';
+            document.getElementById("statusPanelBody").className = 'statuspanelBodyOpen';
+          }
+          if ((item.data.status) == "success") {
+            document.getElementById("statusPanelHead").innerHTML = (item.data.message)
+            //  document.getElementById("status2").innerHTML = (item.data.message)
+          } else {
+            document.getElementById("statusPanelHead").innerHTML = (item.data.message) + " : Click for more details."
+            //  document.getElementById("status2").innerHTML = (item.data.message) + " : Click for more details."
+          }
+
         })
       }
     });
@@ -168,6 +204,7 @@
 
 
   <script type="text/javascript">
+    //setup maintenance frame
     var today = new Date();
     $.ajax({
       url: 'https://status.npsct.org/api/v1/schedules',
@@ -218,12 +255,50 @@
       }
     });
   </script>
-  <div id="copyright">&copy; Newington Public Schools</div>
 
-<div id=v2pilot w3-include-html="v2pilot.html">
+  <script>
+    //new status bar
+    $.ajax({
+      url: 'https://status.npsct.org/api/v1/components',
+      dataType: 'json',
+      method: 'get',
+      cache: false,
+      success: function(data) {
+        console.log(data);
+        $.each(data, function(index, item) {
+          $.each(item, function(key, value) {
+            componentname = (item[key].name);
+            componentstatus = (item[key].status_name);
+            console.log(componentname + ' : ' + componentstatus);
+            if ((item[key].id) != undefined) {
+              if (componentstatus != 'Operational') {
+                console.log(componentname + ' : ' + componentstatus);
 
-</div>
+                //select outer div for population
+                var oDiv = document.getElementById("statusPanelBody");
 
+                // Create the inner div
+                var iDiv = document.createElement('div');
+                iDiv.className = 'status-body-' + [key];
+                oDiv.appendChild(iDiv);
+
+                //populate the inner div
+                var appendText1 = (componentname);
+                var appendText2 = (componentstatus);
+                //var fullAppend = (appendText1) + (appendText2);
+                var fullAppend = (appendText1) + ' experiencing ' + (appendText2);
+                console.log(fullAppend);
+                var currentCard = '.status-body-' + [key];
+                $(currentCard).append(fullAppend);
+                //document.getElementById("accordion2".panel-primary)
+
+              }
+            }
+          })
+        })
+      }
+    });
+  </script>
 </body>
 
 
