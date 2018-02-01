@@ -51,8 +51,7 @@ a:visited {
 	text-decoration: none;
 }
 
-.accordion-panels {
-	margin: 20px;
+.accordion {
 	background: transparent;
 }
 
@@ -142,22 +141,29 @@ a:visited {
 	color: @paper;
 }
 
-#accordionA {
-	margin: 20px;
-	color: @blue;
-	font-weight: bold;
-	font-size: 18px;
+.statuspanelBody {
+	display: none;
 }
 
-#accordionB {
+.statuspanelBodyOpen {
+	background-color: @paper;
+	color: @blue;
+	display: block;
+	font-weight: normal;
+	padding: 10px;
+}
+
+#accordion {
 	margin: 20px;
-	color: @green;
-	font-weight: bold;
-	font-size: 18px;
 }
 
 #accordion .panel-heading {
-	background-color: lighten(@blue, 30%);
+	background-color: lighten(@blue, 20%);
+}
+
+#accordion .panel-body {
+	color: @blue;
+	font-weight: normal;
 }
 
 #accordion a {
@@ -167,6 +173,7 @@ a:visited {
 #accordion a.btn-primary {
 	color: @blue;
 }
+
 #accordion a.btn-primary:hover {
 	color: @paper;
 }
@@ -176,13 +183,34 @@ a:visited {
 	border-color: @green;
 	border-radius: 4px;
 }
+
 #accordion2 .panel-primary {
 	margin: 20px;
 }
+
 #accordion2 .panel-heading {
 	background-color: lighten(@green, 30%);
 	border-color: @green;
 	color: darken(@green, 10%);
+}
+
+#accordionA {
+	background-color: @paper;
+	border: 2px solid;
+	border-color: darken(@paper, 30%);
+	border-radius: 4px;
+	color: @blue;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 20px;
+	padding: 20px;
+}
+
+#accordionB {
+	margin: 20px;
+	color: @green;
+	font-weight: bold;
+	font-size: 18px;
 }
 
 #announcements {
@@ -204,9 +232,11 @@ a:visited {
 	background-color: lighten(@blue, 60%);
 	border-color: lighten(@blue, 30%);
 }
+
 #collapseA [class^=panel-body] {
 	margin: 20px;
 }
+
 #copyright {
 	text-align: center;
 	color: @jumbocolor;
@@ -214,13 +244,15 @@ a:visited {
 
 #maintenance {
 	border: 2px solid;
-	border-color: darken(@panelwarning, 25%);
+	border-radius: 4px;
+	border-color: darken(@panelwarning, 55%);
 	margin: 20px;
 }
 
 #maintenance .panel-heading {
-	background-color: @panelwarning;
+	background-color: darken(@panelwarning,5%);
 }
+
 #maintenance [class^=panel-body] {
 	margin: 20px;
 }
@@ -228,9 +260,9 @@ a:visited {
 #status {
 	font-weight: bold;
 	font-size: 16px;
+	padding: 10px;
 	text-decoration: none;
 	margin: 20PX;
-	padding: 10px;
 	border-radius: 4px;
 }
 
@@ -247,16 +279,4 @@ a:visited {
 	color: @paper;
 }
 
-#statusPanelBody{
-
-}
-.statuspanelBody {
-	display: none;
-}
-.statuspanelBodyOpen {
-	background-color: @paper;
-	color: @blue;
-	display: block;
-	font-weight: normal;
-	padding: 10px;
-}
+#statusPanelBody {}
