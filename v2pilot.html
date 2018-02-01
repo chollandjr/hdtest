@@ -238,9 +238,8 @@
             </div>
           </a>
           <div id="collapseA" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>Click the button to request a repair for device or software.
-            </div>
+            <!--<div class="panel-body">
+            </div>-->
           </div>
         </div>
       </div>
@@ -255,10 +254,39 @@
           cache: false,
           success: function(data) {
             console.log(data);
-            $(data).each(function(index, item) {
-                console.log(index);console.log(item);
+            $.each(data, function(index, item) {
+              $.each(item, function(key, value) {
+                componentname = (item[key].name);
+                componentstatus = (item[key].status_name);
+                //console.log(componentname + ' : ' + componentstatus);
+                if ((item[key].id) != undefined) {
+                if (componentstatus != 'Operational') {
+                  console.log(componentname + ' : ' + componentstatus);
+
+                  //select outer div for population
+                  var oDiv = document.getElementById("collapseA");
+
+                  // Create the inner div
+                  var iDiv = document.createElement('div');
+                  iDiv.className = 'panel-body' + [key];
+                  oDiv.appendChild(iDiv);
+
+                  //populate the inner div
+                  //var appendText1 = '<h4>' + (componentname) + '</h4>';
+                  //var appendText2 = '<p>' + (componentstatus) + '</p>';
+                  //var fullAppend = (appendText1) + (appendText2);
+                  var appendText1 = (componentname);
+                  var appendText2 = (componentstatus);
+                  //var fullAppend = (appendText1) + (appendText2);
+                  var fullAppend = (appendText1) +' : ' + (appendText2);
+                  var currentCard = '.panel-body' + [key];
+                  $(currentCard).append(fullAppend);
+
+                }
+              }
               })
-            }
+            })
+          }
           });
   </script>
 </body>
